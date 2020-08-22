@@ -1,2 +1,2 @@
 # Hython
-Hython(HUI CPython API), a simple wrapper for CPython API, very easy to use.
+Hython(HUI CPython API), a simple wrapper aimed to invoke c/cpp in python or invoke python in cpp which base on CPython API, and very easy to use.
