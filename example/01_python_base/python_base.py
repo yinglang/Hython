@@ -1,5 +1,3 @@
-from PIL import Image
-
 def print_hello():
     print("hello")
     
