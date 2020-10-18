@@ -4,15 +4,16 @@
 #include  <Python.h>
 #include <string>
 
-namespace HUI{
-    // 如果value不为true，则打印错误信息，同时结束程序
-    void pyassert(bool value, const char* error_string){
-        if(!value){
-            fprintf(stderr, "%s\n", error_string);
-            exit(-1);
-        }
+// 如果value不为true，则打印错误信息，同时结束程序
+#ifndef pyassert
+#define pyassert(value, error_string) \
+    if(!value){ \
+        fprintf(stderr, "%s\n", error_string);\
+        exit(-1);\
     }
+#endif
 
+namespace HUI{
     class PyBaseEngine{
         bool finished;
     public:
@@ -65,13 +66,6 @@ namespace HUI{
                 (std::string(func_name) + "not found or got error while call it.").c_str());
             return func_obj;
         }
-
-        // void call_func(PyObject* module_obj, const char* func_name){
-        //     PyObject * func_obj = PyObject_GetAttrString(module_obj, func_name);
-        //     pyassert(func_obj != NULL, 
-        //         (std::string(func_name) + "not found or got error while call it.").c_str());
-        //     PyEval_CallObject(func_obj, NULL);
-        // }
 
         ////////////////// middle low-level API ///////////////////////////////
 

@@ -66,6 +66,26 @@ public:
         return true;
 	}
 
+   /*
+   * rgb_file/xray_file/xray_file 检测识别结果文件， fusion结果会插入到该文件
+   * datatype: 雷达的状态 0：左条带 1：右条带 2：聚束
+   */
+   int fuse_result(const char* rgb_file, const char* xray_file, const char* radar_file, uint8 datatype){
+       
+   }
+
+   /**
+   * rgb_file/xray_file/radar_file： 可见光/红外/雷达的检测和识别的结果
+   * cal_type: 0: 目标检测 1：目标识别 2：目标检测+目标识别
+   */
+   	int jiance_and_shibie(uint8* rgb_data, uint rgb_w, uint rgb_h, uint rgb_c, const char* rgb_file,
+            uint8* xray_data, uint xray_w, uint xray_h, uint xray_c, const char* xray_file,
+            uint8* radar_data, uint radar_w, uint radar_h, uint radar_c, const char* radar_file,
+            uint8 cal_type
+            ){
+        
+    }
+    
 	int finish(){
 		if(!func_finish)
 			func_finish = pyengine->get_func(module_obj, "finish");

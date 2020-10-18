@@ -55,7 +55,7 @@ namespace HUI{
         PyObject* get_func(PyObject* module_obj, const char* func_name){
             PyObject * func_obj = PyObject_GetAttrString(module_obj, func_name);
             pyassert(func_obj != NULL, 
-                (std::string(func_name) + "not found or got error while call it.").c_str());
+                (std::string(func_name) + " not found or got error while call it.").c_str());
             return func_obj;
         }
         

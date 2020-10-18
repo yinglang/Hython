@@ -18,6 +18,10 @@ int main(){
     aiapi.jiance(data, 4, 4, 3, "rgb.json", 
             data, 4, 4, 3, "xray.json",
             data, 4, 4, 3, "radar.json");
+    
+    aiapi.jiance(NULL, 0, 0, 0, "", 
+            data, 4, 4, 3, "xray.json",
+            data, 4, 4, 3, "radar.json");
 
     aiapi.shibie(data, 4, 4, 3, "shibie_rgb.json", 
         data, 4, 4, 3, "shibie_xray.json");
